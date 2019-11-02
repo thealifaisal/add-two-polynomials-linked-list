@@ -132,5 +132,25 @@ class List{
 				}
 			}
 		}
+		
+		~List()
+		{
+			Node *temp;
+			while(head != tail)
+			{
+				temp = new Node(4, 2);
+				temp = head;
+				head = head->addrOfNext;
+				delete temp;
+				temp = 0;
+			}
+			
+			if(head != 0)
+			{
+				delete head;
+				head = 0;
+				tail = 0;
+			}
+		}
 	
 };
